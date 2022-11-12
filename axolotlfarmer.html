@@ -1,32 +1,40 @@
 <html>
-<head><title>0 Axolotls</title></head>
-<body>
-    <a href=# onclick="add()"><img src="Axolotl.png"></a>
-    <br><br>
-    You received:
-    <input type="text" id="text" disabled style = text-align:center>
-    <script>
-        function add() {
-            ShrimpNum = ShrimpNum + 1
-            document.getElementById('text').value = ShrimpNum;
-            document.title = ShrimpNum + " Shrimp"
-        }
-    </script>
-    Kelps
-    <br><br>
-    <button><a href="#" onClick="save()">Save</button>
-    <button><a href="#" onClick="load()">Load</button>
-    <script>
-    function save() {
-        localStorage.setItem("ShrimpNum", ShrimpNum);
-    }
-    function load(){
-        ShrimpNum = localStorage.getItem("ShrimpNum");
-        ShrimpNum = parseInt(ShrimpNum);
-        document.getElementById('text').value = ShrimpNum;
-        document.title = ShrimpNum + " Shrimp"
-    }
-    </script>
+    <head>
+        <title>Axolotl Aggregation</title>
+    </head>
+    
+    <body>
+        <row>
+        <p>Shrimps: <span id="shrimp">0</span></p>
+        <img src="Axolotl.png" height="256px" width="256px" onclick="addToShrimp(1)">
 
-</body>
+        <script>
+            var shrimp = 0;
+            var upgradeCost = 20;
+            var upgrades = 0;
+
+            function addToShrimp(amount) {
+                shrimp = shrimp + amount
+                document.getElementById("shrimp").innerHTML = shrimp;
+            }
+
+            function buyUpgrade() {
+                if (shrimp >= upgradeCost){
+                    shrimp = shrimp - upgradeCost;
+                    upgrades++;
+                    upgradeCost = Math.round(upgradeCost * 1.1);
+
+                    document.getElementById("shrimp").innerHTML = shrimp;
+                    document.getElementById("upgradeCost").innerHTML = upgradeCost;
+                    document.getElementById("upgrades").innerHTML = upgrades;
+
+                }
+            }
+
+
+            setInterval()
+
+        </script>
+        </row>
+    </body>
 </html>
