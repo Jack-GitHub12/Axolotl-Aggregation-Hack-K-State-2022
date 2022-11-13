@@ -1,5 +1,6 @@
 
                         var shrimp= 0;
+                        var amount = 0;
 
                         var netCost = 20;
                         var netUpgrades = 0;
@@ -19,35 +20,91 @@
                         var ach7 = 0;
                         var ach8 = 0;
 
+                        //let buyStock = document.getElementById('buystocks');
+                       
+                        //buyStock.addEventListener('click', () =>{
+                           
+                            
+                        //});
+                        
 
-                        function buyStock(investment){
-                            var stockROI = Math.random(0,100) - 50 + 10;
-                            var shrimpReturn  = stockROI*investment*.01;
+                       
+                        function buybonds(){
+                                
+                            let input1 = prompt("Please enter number","number");
+                            
+                            if(input1 != null){
+                            var investment1 = parseFloat(input);
+                            if(investment1 <= shrimp){
+                                addInvestmentToShrimp(-1*investment1);
+                                var bondROI = (Math.random() - 0.5 + 1.6)*.01;
+                                var shrimpReturn  = bondROI*investment1;
+                                setTimeout(addToShrimp, 10000, shrimpReturn);
+                            }
+                            }
+                        };
+                        
+
+                        function buyIndex(){
+                            let input = prompt("Please enter number","number");
+                            if(input != null){
+                            var investment = parseFloat(input);
+                            if(investment <= shrimp){
+                                addInvestmentToShrimp(-1*investment);
+                            var indexROI = (Math.random()*50 -25 + 11.88)*.01;
+                            var shrimpReturn  = indexROI*investment;
                             setTimeout(addToShrimp, 10000, shrimpReturn);
+                            }
                         }
+                        };
 
-                        function buyBond(investment){
-                            var bondROI = Math.random(0,1) + 1.6;
-                            var shrimpReturn  = bondROI*investment*.01;
+                        function buyETF(){
+                            let input = prompt("Please enter number","number");
+                            if(input != null){
+                            var investment = parseFloat(input);
+                            if(investment <= shrimp){
+                                addInvestmentToShrimp(-1*investment);
+                            var etfROI = (Math.random()*50 -25 + 10)*.1;
+                            var shrimpReturn  = etfROI*investment;
                             setTimeout(addToShrimp, 10000, shrimpReturn);
+                            }
                         }
+                        };
 
-                        function buyIndex(investment){
-                            var indexROI = Math.random(0,50) -25 + 11.88;
-                            var shrimpReturn  = indexROI*investment*.01;
+                        function buyMutual(){
+                            let input = prompt("Please enter number","number");
+                            if(input != null){
+                            var investment = parseFloat(input);
+                            if(investment <= shrimp){
+                                addInvestmentToShrimp(-1*investment);
+                            var mutualROI = (Math.random()*80 -40 + 12.86)*.01;
+                            var shrimpReturn  = mutualROI*investment;
                             setTimeout(addToShrimp, 10000, shrimpReturn);
+                            }
                         }
+                        };
 
-                        function buyETF(investment){
-                            var etfROI = Math.random(0,50) -25 + 10;
-                            var shrimpReturn  = etfROI*investment*.01;
-                            setTimeout(addToShrimp, 10000, shrimpReturn);
-                        }
-
-                        function buyMutual(investment){
-                            var mutualROI = Math.random(0,80) -40 + 12.86;
-                            var shrimpReturn  = mutualROI*investment*.01;
-                            setTimeout(addToShrimp, 10000, shrimpReturn);
+                        function stonks(){
+                                
+                            let input = prompt("Please enter number","number");
+                            if(input != null){
+                            var investment = parseFloat(input);
+                            if(investment <= shrimp){
+                                //shrimp = shrimp - investment;
+                                addInvestmentToShrimp(-1*investment);
+                                // function buyStock(input){
+                                    let stockROI = ((Math.random()*100) -50 + 10)*.01;
+                                    var shrimpReturn  = stockROI*investment;
+                                    setTimeout(addInvestmentToShrimp, 10000, shrimpReturn);
+                                // }
+                            }
+                            }
+                        };
+                        
+                        function addInvestmentToShrimp(amount) {
+                            
+                            shrimp = shrimp + amount;
+                            document.getElementById("shrimp").innerHTML = parseInt(shrimp);
                         }
 
 
@@ -134,3 +191,5 @@
 
                             }
                         }
+                        
+                        
