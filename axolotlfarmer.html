@@ -48,7 +48,7 @@
                 if (shrimp >= planktonCost){
                     shrimp = shrimp - planktonCost;
                     planktonUpgrades++;
-                    planktonCost = Math.round(netCost * 1.05);
+                    planktonCost = Math.round(planktonCost * 1.05);
 
                     document.getElementById("shrimp").innerHTML = parseInt(shrimp);
                     document.getElementById("planktonCost").innerHTML = planktonCost;
@@ -61,7 +61,7 @@
                 if (shrimp >= mineralCost){
                     shrimp = shrimp - mineralCost;
                     mineralUpgrades++;
-                    mineralCost = Math.round(netCost * 1.5);
+                    mineralCost = Math.round(mineralCost * 1.5);
 
                     document.getElementById("shrimp").innerHTML = parseInt(shrimp);
                     document.getElementById("mineralCost").innerHTML = mineralCost;
