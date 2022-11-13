@@ -6,15 +6,16 @@
     <body>
         <row>
         <p>Shrimps: <span id="shrimp">0</span></p>
-        <img src="Axolotl.png" height="256px" width="256px" onclick="addToShrimp(1)">
+        <img src="Axolotl.png" height="512px" width="512px" onclick="addToShrimp(1)">
 
         <button onclick="buyNet()">Net [<span id ="netCost">20</span>] -- <span id="netUpgrades">0</span></button>
-        <button onclick="buyPlankton()">Plankton [<span id ="planktonCost">20</span>] -- <span id="planktonUpgrades">0</span></button>
-        <button onclick="buyMineral()">Mineral Bed [<span id ="mineralCost">20</span>] -- <span id="mineralUpgrades">0</span></button>
+        <button onclick="buyPlankton()">Plankton [<span id ="planktonCost">5</span>] -- <span id="planktonUpgrades">0</span></button>
+        <button onclick="buyMineral()">Mineral Bed [<span id ="mineralCost">500</span>] -- <span id="mineralUpgrades">0</span></button>
 
 
         <script>
-            var shrimp = 0;
+            var shrimp= 0;
+
 
             var netCost = 20;
             var netUpgrades = 0;
@@ -26,8 +27,8 @@
             var mineralUpgrades = 0;
 
             function addToShrimp(amount) {
-                shrimp = shrimp + amount
-                document.getElementById("shrimp").innerHTML = shrimp;
+                (planktonUpgrades == 0 && netUpgrades == 0 && mineralUpgrades == 0) ? shrimp = shrimp + amount :shrimp = shrimp + amount*(planktonUpgrades*1.05 + netUpgrades*1.1 + mineralUpgrades*1.25);
+                document.getElementById("shrimp").innerHTML = parseInt(shrimp);
             }
 
             function buyNet() {
@@ -36,7 +37,7 @@
                     netUpgrades++;
                     netCost = Math.round(netCost * 1.15);
 
-                    document.getElementById("shrimp").innerHTML = shrimp;
+                    document.getElementById("shrimp").innerHTML = parseInt(shrimp);
                     document.getElementById("netCost").innerHTML = netCost;
                     document.getElementById("netUpgrades").innerHTML = netUpgrades;
 
@@ -49,7 +50,7 @@
                     planktonUpgrades++;
                     planktonCost = Math.round(netCost * 1.05);
 
-                    document.getElementById("shrimp").innerHTML = shrimp;
+                    document.getElementById("shrimp").innerHTML = parseInt(shrimp);
                     document.getElementById("planktonCost").innerHTML = planktonCost;
                     document.getElementById("planktonUpgrades").innerHTML = planktonUpgrades;
 
@@ -62,7 +63,7 @@
                     mineralUpgrades++;
                     mineralCost = Math.round(netCost * 1.5);
 
-                    document.getElementById("shrimp").innerHTML = shrimp;
+                    document.getElementById("shrimp").innerHTML = parseInt(shrimp);
                     document.getElementById("mineralCost").innerHTML = mineralCost;
                     document.getElementById("mineralUpgrades").innerHTML = mineralUpgrades;
 
