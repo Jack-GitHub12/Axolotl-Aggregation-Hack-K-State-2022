@@ -32,9 +32,6 @@
             var ach6 = 0;
             var ach7 = 0;
             var ach8 = 0;
-            var ach9 = 0;
-            var ach10 = 0;
-            var alertcount = 0;
 
 
             function addToShrimp(amount) {
@@ -79,6 +76,10 @@
                 if ((mineralUpgrades) >= 1 && ach8 == 0){
                     alert("Achievement unlocked: Calci-licious!!!\nAcquired your first mineral bed upgrade\n\nDid you know that the Axolotl breeding ritual involves a dance?");
                     ach8 = 1;
+                }
+
+                if ((ach1 + ach2 + ach3 + ach4 + ach5 + ach6 + ach7 + ach8) == 8){
+                    alert("Achievement unlocked: Shrimp King\nUnlocked all achievements\n\nDid you know that Aztecs in ancient Mexico used to dine on Axolotl? They viewed them as a delicacy that was not only considered to be a rare treat, but they were also consumed for nutritional purposes.Francesco Clavigero proclaimed in 1787 that the Axolotl was good to eat and had the flavor and taste that closely resembled that of the eel.");
                 }
             }
 
