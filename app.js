@@ -18,9 +18,37 @@
                         var ach6 = 0;
                         var ach7 = 0;
                         var ach8 = 0;
-                        var ach9 = 0;
-                        var ach10 = 0;
-                        var alertcount = 0;
+
+
+                        function buyStock(investment){
+                            var stockROI = Math.random(0,100) - 50 + 10;
+                            var shrimpReturn  = stockROI*investment*.01;
+                            setTimeout(addToShrimp, 10000, shrimpReturn);
+                        }
+
+                        function buyBond(investment){
+                            var bondROI = Math.random(0,1) + 1.6;
+                            var shrimpReturn  = bondROI*investment*.01;
+                            setTimeout(addToShrimp, 10000, shrimpReturn);
+                        }
+
+                        function buyIndex(investment){
+                            var indexROI = Math.random(0,50) -25 + 11.88;
+                            var shrimpReturn  = indexROI*investment*.01;
+                            setTimeout(addToShrimp, 10000, shrimpReturn);
+                        }
+
+                        function buyETF(investment){
+                            var etfROI = Math.random(0,50) -25 + 10;
+                            var shrimpReturn  = etfROI*investment*.01;
+                            setTimeout(addToShrimp, 10000, shrimpReturn);
+                        }
+
+                        function buyMutual(investment){
+                            var mutualROI = Math.random(0,80) -40 + 12.86;
+                            var shrimpReturn  = mutualROI*investment*.01;
+                            setTimeout(addToShrimp, 10000, shrimpReturn);
+                        }
 
 
                         function addToShrimp(amount) {
