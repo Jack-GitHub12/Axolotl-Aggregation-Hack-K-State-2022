@@ -8,31 +8,68 @@
         <p>Shrimps: <span id="shrimp">0</span></p>
         <img src="Axolotl.png" height="256px" width="256px" onclick="addToShrimp(1)">
 
+        <button onclick="buyNet()">Net [<span id ="netCost">20</span>] -- <span id="netUpgrades">0</span></button>
+        <button onclick="buyPlankton()">Plankton [<span id ="planktonCost">20</span>] -- <span id="planktonUpgrades">0</span></button>
+        <button onclick="buyMineral()">Mineral Bed [<span id ="mineralCost">20</span>] -- <span id="mineralUpgrades">0</span></button>
+
+
         <script>
             var shrimp = 0;
-            var upgradeCost = 20;
-            var upgrades = 0;
+
+            var netCost = 20;
+            var netUpgrades = 0;
+
+            var planktonCost = 5;
+            var planktonUpgrades = 0;
+
+            var mineralCost = 500;
+            var mineralUpgrades = 0;
 
             function addToShrimp(amount) {
                 shrimp = shrimp + amount
                 document.getElementById("shrimp").innerHTML = shrimp;
             }
 
-            function buyUpgrade() {
-                if (shrimp >= upgradeCost){
-                    shrimp = shrimp - upgradeCost;
-                    upgrades++;
-                    upgradeCost = Math.round(upgradeCost * 1.1);
+            function buyNet() {
+                if (shrimp >= netCost){
+                    shrimp = shrimp - netCost;
+                    netUpgrades++;
+                    netCost = Math.round(netCost * 1.15);
 
                     document.getElementById("shrimp").innerHTML = shrimp;
-                    document.getElementById("upgradeCost").innerHTML = upgradeCost;
-                    document.getElementById("upgrades").innerHTML = upgrades;
+                    document.getElementById("netCost").innerHTML = netCost;
+                    document.getElementById("netUpgrades").innerHTML = netUpgrades;
 
                 }
             }
 
+            function buyPlankton() {
+                if (shrimp >= planktonCost){
+                    shrimp = shrimp - planktonCost;
+                    planktonUpgrades++;
+                    planktonCost = Math.round(netCost * 1.05);
 
-            setInterval()
+                    document.getElementById("shrimp").innerHTML = shrimp;
+                    document.getElementById("planktonCost").innerHTML = planktonCost;
+                    document.getElementById("planktonUpgrades").innerHTML = planktonUpgrades;
+
+                }
+            }
+
+            function buyMineral() {
+                if (shrimp >= mineralCost){
+                    shrimp = shrimp - mineralCost;
+                    mineralUpgrades++;
+                    mineralCost = Math.round(netCost * 1.5);
+
+                    document.getElementById("shrimp").innerHTML = shrimp;
+                    document.getElementById("mineralCost").innerHTML = mineralCost;
+                    document.getElementById("mineralUpgrades").innerHTML = mineralUpgrades;
+
+                }
+            }
+
+ 
 
         </script>
         </row>
